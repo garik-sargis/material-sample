@@ -1,7 +1,9 @@
 package com.gs.android.materialsample;
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -30,6 +32,9 @@ public final class MainActivity extends AppCompatActivity {
 
     @Bind(R.id.nav_view)
     protected NavigationView mNavView;
+
+    @Bind(R.id.fab)
+    protected FloatingActionButton mFab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,26 +67,24 @@ public final class MainActivity extends AppCompatActivity {
         });
 
         // TODO: Replace string resources
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mNavDrawer, mToolbar, R.string.app_name, R.string.app_name) {
-
-            @Override
-            public void onDrawerClosed(View drawerView) {
-                // Code here will be triggered once the drawer closes as we dont want anything to happen so we leave this blank
-                super.onDrawerClosed(drawerView);
-            }
-
-            @Override
-            public void onDrawerOpened(View drawerView) {
-                // Code here will be triggered once the drawer open as we dont want anything to happen so we leave this blank
-
-                super.onDrawerOpened(drawerView);
-            }
-        };
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mNavDrawer, mToolbar, R.string.app_name, R.string.app_name);
 
         //Setting the actionbarToggle to drawer layout
         mNavDrawer.setDrawerListener(actionBarDrawerToggle);
 
         actionBarDrawerToggle.syncState();
 
+        mFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar.make(mToolbar, "Sample text. May be formatted.", Snackbar.LENGTH_INDEFINITE)
+                        .setAction("Fire!", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                // Empty
+                            }
+                        }).show();
+            }
+        });
     }
 }
