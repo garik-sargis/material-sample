@@ -10,6 +10,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -77,6 +78,21 @@ public final class MainActivity extends AppCompatActivity {
         mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Empty
+            }
+        });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.activity_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_explore:
                 Snackbar.make(mToolbar, "Sample text. May be formatted.", Snackbar.LENGTH_INDEFINITE)
                         .setAction("Fire!", new View.OnClickListener() {
                             @Override
@@ -84,7 +100,10 @@ public final class MainActivity extends AppCompatActivity {
                                 // Empty
                             }
                         }).show();
-            }
-        });
+                break;
+            case R.id.action_settings:
+                break;
+        }
+        return true;
     }
 }

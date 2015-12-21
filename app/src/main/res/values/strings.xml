@@ -47,4 +47,6 @@
         Lorem ipsum. The quick brown fox jumps over the lazy dog.
         Lorem ipsum. The quick brown fox jumps over the lazy dog.
     </string>
+    <string name="action_settings">Settings</string>
+    <string name="action_explore">Explore</string>
 </resources>
