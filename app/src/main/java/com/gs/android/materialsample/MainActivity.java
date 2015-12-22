@@ -54,7 +54,9 @@ public final class MainActivity extends AppCompatActivity {
         mNavView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
-                item.setChecked(true);
+                if (item.isCheckable()) {
+                    item.setChecked(true);
+                }
 
                 switch (item.getItemId()) {
                     case R.id.group:

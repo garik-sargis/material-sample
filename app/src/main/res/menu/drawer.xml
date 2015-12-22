@@ -3,6 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/person"
+            android:icon="@drawable/ic_person_24dp"
+            android:title="Person"
+            app:showAsAction="ifRoom" />
+        <item
             android:id="@+id/group"
             android:icon="@drawable/ic_group_24dp"
             android:title="Group"
@@ -12,5 +17,29 @@
             android:icon="@drawable/ic_plane_24dp"
             android:title="Plane"
             app:showAsAction="ifRoom" />
+        <item
+            android:id="@+id/earth"
+            android:icon="@drawable/ic_earth_24dp"
+            android:title="Earth"
+            app:showAsAction="ifRoom" />
     </group>
+    <item android:title="Subheader">
+        <menu>
+            <item
+                android:id="@+id/cloud_up"
+                android:icon="@drawable/ic_cloud_up_24dp"
+                android:title="Cloud Up"
+                app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/cloud_down"
+                android:icon="@drawable/ic_cloud_down_24dp"
+                android:title="Cloud Down"
+                app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/settings"
+                android:icon="@drawable/ic_cog_24dp"
+                android:title="Settings"
+                app:showAsAction="ifRoom" />
+        </menu>
+    </item>
 </menu>
